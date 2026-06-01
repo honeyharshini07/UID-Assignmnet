@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - WalMart</title>
+  <meta name="description" content="Browse our wide range">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo" style="height: 40px; margin-right: 8px; border-radius: 4px;">
+          WalMart
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center ml-3">
+          <a href="cart.html" class="cart-icon ml-2">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-header">
+    <div class="page-header-bg">
+      <div id="pageCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="assets/img/background1.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background2.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background3.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background4.png" alt="Background"></div>
+        </div>
+        <a class="carousel-control-prev" href="#pageCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#pageCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Our Products</h1>
+      <!--<p>Welcome to Ganesh Glass & Plywoods - Browse our premium collection</p>-->
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="product-section" style="background-color: #fff; padding-top: 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h4 style="margin-bottom: 20px; font-weight: 700;">Filter by Price</h4>
+            <div class="form-group">
+              <label style="font-weight: 600; margin-bottom: 10px;">Price Range:</label>
+              <input type="range" class="form-control-range" min="0" max="2000" id="priceRange" style="width: 100%;">
+              <p style="margin-top: 10px; color: #666;">💲0 - 💲<span id="priceValue">2000</span></p>
+            </div>
+            <hr>
+            <h4 style="margin-bottom: 20px; font-weight: 700;">Categories</h4>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="grocery" value="grocery">
+              <label class="form-check-label" for="grocery">Grocery</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="fashion" value="fashion">
+              <label class="form-check-label" for="fashion">Clothing ,Shoes and Accessories</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="baby and kids" value="baby and kids">
+              <label class="form-check-label" for="baby and kids">Baby and Kids</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="home" value="home">
+              <label class="form-check-label" for="home">Home</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="electronics" value="electronics">
+              <label class="form-check-label" for="electronics">Electronics</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="personal care" value="personal care">
+              <label class="form-check-label" for="personal care">Personal Care</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="beauty" value="beauty">
+              <label class="form-check-label" for="beauty">Beauty</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="game and movie" value="game and movie">
+              <label class="form-check-label" for="game and movie">Gaming and Movies</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="books" value="books">
+              <label class="form-check-label" for="books">Books</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="work" value="work">
+              <label class="form-check-label" for="work">School and Office essentials</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="party" value="party">
+              <label class="form-check-label" for="party">Party Supplies</label>
+            </div>
+            <hr>
+            <h4 style="margin-bottom: 20px; font-weight: 700;">Sort by Rating</h4>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rating" id="rating5" value="5">
+              <label class="form-check-label" for="rating5">
+                <i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i> <small>only</small>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
+              <label class="form-check-label" for="rating4">
+                <i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="fas fa-star" style="color:#ffb800;"></i><i class="far fa-star" style="color:#ffb800;"></i> <small>& up</small>
+              </label>
+            </div>
+            <hr>
+            <button class="btn btn-primary-custom btn-block" onclick="clearAllFilters()" style="margin-top:10px;">Clear All Filters</button>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="col-lg-9">
+          <div id="products-toolbar" style="margin-bottom: 30px; padding: 15px; background: #f5f5f5; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <p style="margin: 0;">Showing <strong id="product-count"></strong> products</p>
+            <div>
+              <label style="margin-right: 10px; font-weight: 600;">Sort by:</label>
+              <select class="form-control" id="sortSelect" style="width: 200px; display: inline-block;">
+                <option value="latest">Latest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="best-sellers">Best Sellers</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row" id="products-grid">
+            <!-- Products rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <a>All Departments</a>
+        </div>
+        <div class="footer-col">
+          <a>Store Directory</a>
+        </div>
+        <div class="footer-col">
+          <a>Our Company</a>
+        </div>
+        <div class="footer-col">
+          <a>Careers</a>
+        </div>
+        <div class="footer-col">
+          <a>Sell on WalMart.com</a>
+        </div>
+        <div class="footer-col">
+          <a>Help</a>
+        </div>
+        <div class="footer-col">
+          <a>Product Recalls</a>
+        </div>
+        <div class="footer-col">
+          <a>Accessebility</a>
+        </div>
+        <div class="footer-col">
+          <a>Tax Exempt Program</a>
+        </div>
+        <div class="footer-col">
+          <a>Get the WalMart App</a>
+        </div>
+        <div class="footer-col">
+          <a>Saftey DataSheet</a>
+        </div>
+        <div class="footer-col">
+          <a>Terms of Use</a>
+        </div>
+        <div class="footer-col">
+          <a>Privacy Notice</a>
+        </div>
+        <div class="footer-col">
+          <a>California Supply Chain Act </a>
+        </div>
+        <div class="footer-col">
+          <a>Your Privacy Choices</a>
+        </div>
+        <div class="footer-col">
+          <a>Notice at Collection</a>
+        </div>
+        <div class="footer-col">
+          <a>AdChoices</a>
+        </div>
+        <div class="footer-col">
+          <a>Learn About Spark Driver</a>
+        </div>
+        <div class="footer-col">
+          <a>Brand Shop Directory</a>
+        </div>
+        <div class="footer-col">
+          <a>WalMart Business</a>
+        </div>
+        <div class="footer-col">
+          <a>#IYWYK</a>
+        </div>
+        <div class="footer-col">
+          <a>Delete Account</a>
+        </div>
+        <div class="footer-col">
+          <h5>Categories</h5>
+          <ul>
+            <li><a href="categories.html">Grocery</a></li>
+            <li><a href="categories.html">Clothing ,Shoes and Accessories</a></li>
+            <li><a href="categories.html">Baby and Kids</a></li>
+            <li><a href="categories.html">Home</a></li>
+            <li><a href="categories.html">Electronics</a></li>
+            <li><a href="categories.html">Gaming and Movies</a></li>
+            <li><a href="categories.html">Personal Care</a></li>
+            <li><a href="categories.html">Beauty</a></li>
+            <li><a href="categories.html">School and Office essentials</a></li>
+            <li><a href="categories.html">Books</a></li>
+            <li><a href="categories.html">Party Supplies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Walmart. The trademarks Walmart and the Walmart Spark design are registered with the US Patent and Trademark Office. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="assets/js/java_script.js"></script>
+  <script>
+    // =============================================
+    // Product Database (single source of truth)
+    // =============================================
+    const allProducts = [
+      { id:'1', name:'Stainless Steel Water Bottle',price:23.97,image:'assets/img/id1.png',category:'home',rating:4,reviews:45,badge:'Featured' },
+      { id:'2', name:'Samsung 57 Gaming Monitor',price:1499.99,image:'assets/img/id2.png',category:'electronics',rating:4,reviews:38,badge:'Popular' },
+      { id:'3', name:'Bose Bluetooth Speaker',price:399.0,image:'assets/img/id3.png',category:'electronics',rating:5,reviews:62,badge:'Best Seller' },
+      { id:'4', name:'Transport bag',price:88.39,image:'assets/img/id4.png',category:'home',rating:5,reviews:29,badge:'' },
+      { id:'5', name:'Shark Air Purifier',price:248.0,image:'assets/img/id5.png',category:'electronics',rating:5,reviews:41,badge:'' },
+      { id:'6', name:'Colors Changing Lights',price:19.82,image:'assets/img/id6.png',category:'party',rating:4,reviews:53,badge:'' },
+      { id:'7', name:'Fresh Seedless Watermelon',price:4.67,image:'assets/img/id7.png',category:'grocery',rating:5,reviews:35,badge:'' },
+      { id:'8', name:'Fresh Blueberries, 1 Pint Container',price:2.97,image:'assets/img/id8.png',category:'grocery',rating:4,reviews:88,badge:'' },
+      { id:'9', name:'Crystal Creamery, Real California Milk, Whole Vitamin D, Gluten Free Milk, Plastic Jug, Gallon128 fl oz',price:5.42,image:'assets/img/id9.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'10', name:'Planet Oat Oat Milk, Velvety & Smooth, Barista Lovers, 52 fl oz',price:3.38,image:'assets/img/id10.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'11', name:'Great Value Cage-Free White Eggs, Large, 18 Count',price:2.17,image:'assets/img/id11.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'12', name:'Just Egg, Plant-Based Egg, Non-GMO, Egg-Free, 16 oz',price:6.96,image:'assets/img/id12.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'13', name:'Fresh Yellow Onions, 3 lb Bag',price:3.22,image:'assets/img/id13.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'14', name:'Fresh Green Cabbage',price:3.18,image:'assets/img/id14.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'15', name:'Doritos Nacho Cheese Flavored Tortilla Chips',price:3.97,image:'assets/img/id15.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'16', name:'Lays Potato Chips Salt & Vinegar Snack Chips',price:2.50,image:'assets/img/id16.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'17', name:'OREO Double Stuf Chocolate Sandwich Cookies, Family Size',price:4.97,image:'assets/img/id17.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'18', name:'Act II Butter Lovers Microwave Popcorn, 2.75 oz., 12-Count Bags',price:5.64,image:'assets/img/id18.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'19', name:'Coca-Cola Soda Pop Bottle, 2 Liters',price:2.97,image:'assets/img/id19.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'20', name:'Pepsi, Original Cola Soda Pop, 12 fl oz Bottles, 8 Pack',price:6.54,image:'assets/img/id20.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'21', name:'Red Bull Energy Drink, 114mg Caffeine, 12 fl. oz. Can',price:2.94,image:'assets/img/id21.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'22', name:'Nissin Foods Cup Noodles Stir Fry Ramen Noodles, Sweet Chili Flavor, 2.93 oz Cup, Shelf-Stable',price:1.28,image:'assets/img/id22.png',category:'grocery',rating:5,reviews:72,badge:'' },
+      { id:'23', name:'Time and Tru Womens Raffia Kitten Heel Sandals',price:29.98,image:'assets/img/id223.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'24', name:'Skechers Womens Slip Ins Ultra Flex 3.0 Smooth Step Sneaker',price:70.99,image:'assets/img/id24.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'25', name:'Tory Burch TY 7143U Plastic Womens Square Sunglasses Dark Tortoise 56mm Adult',price:79.99,image:'assets/img/id25.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'26', name:'Gynky Travel Duffle Bag Set 2 Pack Weekender Bags for Women',price:19.99,image:'assets/img/id26.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'27', name:'Michael Kors Mens Slim Runway Black Watch MK8507',price:124.00,image:'assets/img/id27.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'28', name:'Wioihee Under $2.00 925 Sterling Silver Diamond Cluster Halo Promise Ring for Women,Love Full Diamond Ring Jewelry',price:1.39,image:'assets/img/id28.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'29', name:'JanSport Unisex Big Student Backpack',price:62.00,image:'assets/img/id29.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'30', name:'Zecgelong Girls Sweatshirts Crewneck Pullover Tops Kids Boys Winter Warm Basic Sweatshirt',price:8.69,image:'assets/img/id30.png',category:'fashion',rating:5,reviews:72,badge:'' },
+      { id:'31', name:'Pamo Babe 4-in-1 Baby Playard with Bassinet & Changing Table for Newborn',price:112.99,image:'assets/img/id31.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'32', name:'Babyeap Baby Playpen Large Play Yard Fence for Toddlers, 50"x50" Gray',price:36.99,image:'assets/img/id32.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'33', name:'Pampers Swaddlers Diapers, Size S4, 66 Count ',price:24.97,image:'assets/img/id33.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'34', name:'Johnsons Baby Head-To-Toe 2-in-1 Baby Wash & Shampoo, 13.6 fl. oz',price:4.78,image:'assets/img/id34.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'35', name:'KABOER 18 Pcs Baby Rattles 0-6 Months,Newborn Hand and Foot Rattles',price:18.99,image:'assets/img/id35.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'36', name:'JoyStone 2-in-1 Toddler Tricycle, Kids Trike with Parent Push Handle',price:69.89,image:'assets/img/id36.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'37', name:'LEGO Disney and Pixar Toy Story 5 Blazes Horse Ranch - Disney Building Set for Girls & Boys, Ages 4+',price:49.99,image:'assets/img/id37.png',category:'baby',rating:5,reviews:72,badge:'' },
+      { id:'38', name:'BedLuxury 111.5 Modular Sectional Sofa with Movable Ottomans, U Shaped Cloud Couch for Living Room, 3-Seat, Grey',price:669.99,image:'assets/img/id38.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'39', name:'GUNAITO Lift Top Coffee Table with Storage, Square coffee table and modern Farmhouse Center Table for Living Room, Natural wood color',price:89.99,image:'assets/img/id39.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'40', name:'Linsy Home 70" W Chenille Convertible Futon Sofa Bed with Adjustable Armrests, Grey',price:131.32,image:'assets/img/id40.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'41', name:'57.25" Gray Decorative Rectangular TV Stand',price:104.00,image:'assets/img/id41.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'42', name:'Queen Size Bed Frame with Removable Headboard & Soft Rounded Corners Cloud Bed Frame Boucle Bed,Beige',price:209.99,image:'assets/img/id42.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'43', name:'iPormis Vanity Desk with Mirror and Lights, White',price:167.93,image:'assets/img/id43.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'44', name:'9 Drawer Bedroom Dresser with Storage, 47 Inch TV Stand for 50, 55 Inch TV, Fabric Chest for Closet',price:79.99,image:'assets/img/id44.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'45', name:'TINANA 10 QT Air Fryer Oven, 8 Preset Functions, LED Smart Touch Display, Oil-Less Cooking, Visible Window, Black',price:69.99,image:'assets/img/id45.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'46', name:'DeLonghi All-in-One Combination Coffee and Espresso Machine',price:379.97,image:'assets/img/id46.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'47', name:'Hamilton Beach 0.9 Cu ft Countertop Microwave Oven, 900 Watts, Stainless Steel, New',price:69.00,image:'assets/img/id47.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'48', name:'Beautiful 3.5 Qt Stand Mixer, White Icing with Flat Beater, Dough Hook, Balloon Whisk',price:64.96,image:'assets/img/id48.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'49', name:'nutribullet Blender Combo with Serve Cups, NBF10500AK Matte Black, 1000W',price:89.96,image:'assets/img/id49.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'50', name:'Better Homes & Garden Holden 20 Pieces Satin Finish Flatware Set',price:24.76,image:'assets/img/id50.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'51', name:'Better Homes & Gardens 12 Piece Bamboo Melamine Tomato Dinnerware Set',price:19.97,image:'assets/img/id51.png',category:'home',rating:5,reviews:72,badge:'' },
+      { id:'52', name:'Portable Bluetooth Speaker IPX7 Waterproof',price:28.59,image:'assets/img/id52.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'53', name:'11-inch iPad Air M4, Built for Apple Intelligence, Wi-Fi 128GB - Blue',price:559.00,image:'assets/img/id53.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'54', name:'AirPods Max 2 - Purple',price:519.99,image:'assets/img/id54.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'55', name:'Apple Blue Mist 42mm Sport Loop ',price:49.00,image:'assets/img/id55.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'56', name:'Lenovo IdeaPad Slim 3i 15.6" FHD Touch Laptop, AMD Ryzen 5 7520U, 8GB RAM, 512 SSD, Artic Grey',price:419.00,image:'assets/img/id56.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'57', name:'Sony PS5 DualSense Wireless Controller - Icon Blue',price:74.00,image:'assets/img/id57.png',category:'electronics',rating:5,reviews:72,badge:'' },
+      { id:'58', name:'Need for Speed Heat- PlayStation 4',price:19.93,image:'assets/img/id58.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'59', name:'Animal Crossing: New Horizons, Nintendo Switch, [Physical] - U.S. Version',price:50.38,image:'assets/img/id59.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'60', name:'Nintendo Switch Sports - Nintendo Switch [Physical]',price:42.30,image:'assets/img/id60.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'61', name:'World of Warships: Legends Firepower Deluxe Editio (Other)',price:29.99,image:'assets/img/id61.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'62', name:'Sea of Stars, Nintendo Switch',price:39.49,image:'assets/img/id62.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'63', name:'Ghost of Yotei - PS5',price:69.00,image:'assets/img/id63.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'64', name:'Nintendo - Entertainment System: SNES Classic Edition (2017 Limited Edition) ',price:105.00,image:'assets/img/id64.png',category:'game and movie',rating:5,reviews:72,badge:'' },
+      { id:'65', name:'Dove Cookie Sprinkle Body Scrub 3.5 Ounce Jar Limited Edition',price:9.99,image:'assets/img/id65.png',category:'personal care',rating:5,reviews:72,badge:'' },
+      { id:'66', name:'Auraglow Teeth Whitening Kit ',price:48.00,image:'assets/img/id66.png',category:'personal care',rating:5,reviews:72,badge:'' },
+      { id:'67', name:'GuruNanda Teeth Whitening Strips - Infused with Coconut Oil - 7 Treatments',price:10.47,image:'assets/img/id67.png',category:'personal care',rating:5,reviews:72,badge:'' },
+      { id:'68', name:'Kerastase Elixir Ultime LHuile Originale Versatile Beautifying Hair Oil, 3.4 fl oz',price:31.99,image:'assets/img/id68.png',category:'personal care',rating:5,reviews:72,badge:'' },
+      { id:'69', name:'Hero image 0 of Hawaiian Tropic Weightless Hydration Clear Sunscreen Spray, SPF 30, 6 oz, 0 of 9',price:10.47,image:'assets/img/id69.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'70', name:'Oikos Protein Shake, Chocolate, 30g Protein, Shelf Stable, 12 Fl Oz Bottle, 15 Count  ',price:26.97,image:'assets/img/id70.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'71', name:'Natures Bounty Hair Skin and Nail Vitamins With Biotin, Womens Multivitamin, Strawberry Gummies, 90 Ct  ',price:8.27,image:'assets/img/id71.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'72', name:'Fortify Skincare Face Cream with Peptides & Collagen - 3-in-1',price:12.48,image:'assets/img/id72.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'73', name:'Revlon 1875W Compact Hair Dryer, Black',price:14.98,image:'assets/img/id73.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'74', name:'Maybelline Lash Sensational Sky Tubes Tubing Mascara Extension-Like Length Conditioning ',price:10.98,image:'assets/img/id74.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'75', name:'DUAIU 18-Piece Professional Makeup Brush Set',price:14.59,image:'assets/img/id75.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'76', name:'Lattafa Yara Candy Eau De Parfum Spray, Perfume for Women, 3.4 oz ',price:21.49,image:'assets/img/id76.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'77', name:'CHI Original 1-Inch Ceramic Hair Straightener Flat Iron, Black',price:89.99,image:'assets/img/id77.png',category:'beauty',rating:5,reviews:72,badge:'' },
+      { id:'78', name:'Pearl White Balloons Pack - Pearl Latex Balloons Garland Arch',price:14.38,image:'assets/img/id78.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'79', name:'Iridescent Party Supplies for 20 Guests, Disposable Iridescent Tableware Set',price:17.59,image:'assets/img/id79.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'80', name:'EGYMEN Artificial Silk Flowers Bouquet ',price:3.49,image:'assets/img/id80.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'81', name:'Upgraded Fall Leaves Tableware Set Watercolor Maple Leaf Disposable Party Supplies',price:18.47,image:'assets/img/id81.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'82', name:'Hallmark Birthday Card ',price:3.98,image:'assets/img/id82.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'83', name:'A&W Root Beer Soda Pop, 12 fl oz, 12 Pack Cans',price:5.00,image:'assets/img/id83.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'84', name:'Current Kids Animal Photo Birthday Greeting Cards Value Pack - Set of 20,',price:13.99,image:'assets/img/id84.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'85', name:'HOMERAL Pink Wrapping Paper Roll - 17 IN x 33 FT Metallic Holographic Star Gift Wrap',price:10.99,image:'assets/img/id85.png',category:'party',rating:5,reviews:72,badge:'' },
+      { id:'86', name:'EntireFlight Sectional Plotter Navigation Tool for Pilot Calculations',price:29.95,image:'assets/img/id86.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'87', name:'Leather Journal',price:21.99,image:'assets/img/id87.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'88', name:'Folio Document Organizer',price:20.99,image:'assets/img/id88.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'89', name:'Apple Barrel Multi-Surface Paint Pens Deluxe Studio Set,',price:35.27,image:'assets/img/id89.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'90', name:'Pencil Case, Storage Box',price:10.80,image:'assets/img/id90.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'91', name:'Pen+Gear Letter Size Hanging File Folders, 12 Count, Green',price:6.98,image:'assets/img/id91.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'92', name:'Planner Academic Planner Calendar Notebook,Perfect for Office Schedule Academic Supplies',price:12.98,image:'assets/img/id92.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'93', name:'Post-it Super Sticky Notes, 3 in. x 3 in., Supernova Neons, 4 Pads',price:4.97,image:'assets/img/id93.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'94', name:'MEHOOM 3-Tier Wooden Monitor Stand Riser',price:29.99,image:'assets/img/id94.png',category:'work',rating:5,reviews:72,badge:'' },
+      { id:'95', name:'Pen+Gear 6-Sheet Cross-Cut Paper/Credit Card Shredder with 3.7 Gallon Bin, Black',price:29.97,image:'assets/img/id95.png',category:'work',rating:5,reviews:72,badge:'' },
+    ];
+
+    // =============================================
+    // DOM references
+    // =============================================
+    const grid           = document.getElementById('products-grid');
+    const countEl        = document.getElementById('product-count');
+    const priceRange     = document.getElementById('priceRange');
+    const priceValueEl   = document.getElementById('priceValue');
+    const sortSelect     = document.getElementById('sortSelect');
+    const categoryBoxes  = document.querySelectorAll('.form-check-input[type="checkbox"]');
+    const ratingRadios   = document.querySelectorAll('input[name="rating"]');
+
+    // =============================================
+    // Star HTML helper
+    // =============================================
+    function starsHTML(rating) {
+      let s = '';
+      for (let i = 1; i <= 5; i++) s += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+      return s;
+    }
+
+    // =============================================
+    // Render products into grid
+    // =============================================
+    function renderProducts(products) {
+      if (products.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12 text-center" style="padding:60px 20px;">
+            <div style="font-size:48px;color:var(--primary-color);margin-bottom:20px;"><i class="fas fa-filter"></i></div>
+            <h4 style="font-weight:700;margin-bottom:10px;">No products found</h4>
+            <p style="color:#666;margin-bottom:20px;">Try adjusting your filters or price range.</p>
+            <button class="btn btn-primary-custom" onclick="clearAllFilters()">Clear Filters</button>
+          </div>`;
+        countEl.textContent = '0';
+        return;
+      }
+
+      let html = '';
+      products.forEach(p => {
+        const badgeHTML = p.badge ? `<span class="product-badge">${p.badge}</span>` : '';
+        const safeName  = p.name.replace(/'/g, "\\'");
+        html += `
+          <div class="col-md-4 col-sm-6">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="${p.image}" alt="${p.name}">
+                ${badgeHTML}
+              </div>
+              <div class="product-body">
+                <div class="product-rating">${starsHTML(p.rating)}</div>
+                <a href="productdetail.html?id=${p.id}" class="product-name">${p.name}</a>
+                <div class="product-price">💲${p.price.toLocaleString('en-IN')}</div>
+                <button class="btn-add-cart" onclick="addToCart('${p.id}','${safeName}',${p.price},'${p.image}')">Add to Cart</button>
+              </div>
+            </div>
+          </div>`;
+      });
+      grid.innerHTML = html;
+      countEl.textContent = products.length;
+    }
+
+    // =============================================
+    // Filter & Sort logic
+    // =============================================
+    function applyFiltersAndSort() {
+      let filtered = [...allProducts];
+
+      // 1. Price filter
+      const maxPrice = parseInt(priceRange.value);
+      filtered = filtered.filter(p => p.price <= maxPrice);
+
+      // 2. Category filter (only when at least one checkbox is checked)
+      const selectedCategories = [];
+      categoryBoxes.forEach(cb => { if (cb.checked) selectedCategories.push(cb.value); });
+      if (selectedCategories.length > 0) {
+        filtered = filtered.filter(p => selectedCategories.includes(p.category));
+      }
+
+      // 3. Rating filter
+      const selectedRating = document.querySelector('input[name="rating"]:checked');
+      if (selectedRating) {
+        const minRating = parseInt(selectedRating.value);
+        filtered = filtered.filter(p => p.rating >= minRating);
+      }
+
+      // 4. Sorting
+      const sortBy = sortSelect.value;
+      switch(sortBy) {
+        case 'price-low':
+          filtered.sort((a, b) => a.price - b.price);
+          break;
+        case 'price-high':
+          filtered.sort((a, b) => b.price - a.price);
+          break;
+        case 'best-sellers':
+          filtered.sort((a, b) => b.reviews - a.reviews);
+          break;
+        case 'latest':
+        default:
+          // keep original order (by id)
+          filtered.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+          break;
+      }
+
+      renderProducts(filtered);
+    }
+
+    // =============================================
+    // Clear all filters
+    // =============================================
+    function clearAllFilters() {
+      priceRange.value = 2000;
+      priceValueEl.textContent = '2000';
+      categoryBoxes.forEach(cb => cb.checked = false);
+      ratingRadios.forEach(r => r.checked = false);
+      sortSelect.value = 'latest';
+      applyFiltersAndSort();
+    }
+
+    // =============================================
+    // Event listeners
+    // =============================================
+    priceRange.addEventListener('input', function() {
+      priceValueEl.textContent = this.value;
+      applyFiltersAndSort();
+    });
+
+    sortSelect.addEventListener('change', applyFiltersAndSort);
+
+    categoryBoxes.forEach(cb => cb.addEventListener('change', applyFiltersAndSort));
+
+    ratingRadios.forEach(r => r.addEventListener('change', applyFiltersAndSort));
+
+    // =============================================
+    // Initial render
+    // =============================================
+    applyFiltersAndSort();
+  </script>
+</body>
+</html>

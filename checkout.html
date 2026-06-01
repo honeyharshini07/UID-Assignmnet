@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - WalMart</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo" style="height:40px;margin-right:8px;border-radius:4px;">WalMart</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center ml-3">
+          <a href="cart.html" class="cart-icon ml-2">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-header">
+    <div class="page-header-bg">
+      <div id="pageCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="assets/img/background1.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background2.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background3.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background4.png" alt="Background"></div>
+        </div>
+        <a class="carousel-control-prev" href="#pageCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#pageCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Checkout</h1>
+      <!--<p>Welcome to Ganesh Glass & Plywoods - Complete your secure purchase</p>-->
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section class="checkout-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form id="checkout-form" onsubmit="placeOrder(event)">
+            <div class="checkout-form">
+              <!-- Billing Information -->
+              <div class="form-section-title">Billing Information</div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="10-digit mobile number" required>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Street Address *</label>
+                <input type="text" class="form-control" id="address" name="address" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="city">City *</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="state">State *</label>
+                    <input type="text" class="form-control" id="state" name="state" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="zip">Pin Code *</label>
+                    <input type="text" class="form-control" id="zip" name="zip" placeholder="6-digit pin code" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="country">Country *</label>
+                    <input type="text" class="form-control" id="country" name="country" value="India" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shipping Information -->
+              <div class="form-section-title">Shipping Address</div>
+
+              <div class="form-check" style="margin-bottom: 20px;">
+                <input class="form-check-input" type="checkbox" id="sameAddress" checked>
+                <label class="form-check-label" for="sameAddress">
+                  Same as billing address
+                </label>
+              </div>
+
+              <div id="shippingAddress" style="display: none;">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="shippingFirstName">First Name *</label>
+                      <input type="text" class="form-control" id="shippingFirstName" name="shippingFirstName">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="shippingLastName">Last Name *</label>
+                      <input type="text" class="form-control" id="shippingLastName" name="shippingLastName">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="shippingAddress">Street Address *</label>
+                  <input type="text" class="form-control" id="shippingAddress" name="shippingAddress">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="shippingCity">City *</label>
+                      <input type="text" class="form-control" id="shippingCity" name="shippingCity">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="shippingState">State *</label>
+                      <input type="text" class="form-control" id="shippingState" name="shippingState">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Information -->
+              <div class="form-section-title">Payment Information</div>
+
+              <div class="form-group">
+                <label>Payment Method *</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditcard" checked>
+                  <label class="form-check-label" for="creditCard">
+                    Credit/Debit Card
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="netBanking" value="netbanking">
+                  <label class="form-check-label" for="netBanking">
+                    Net Banking
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
+                  <label class="form-check-label" for="cod">
+                    Cash on Delivery
+                  </label>
+                </div>
+              </div>
+
+              <div id="cardDetails">
+                <div class="form-group">
+                  <label for="cardName">Cardholder Name *</label>
+                  <input type="text" class="form-control" id="cardName" name="cardName">
+                </div>
+
+                <div class="form-group">
+                  <label for="cardNumber">Card Number *</label>
+                  <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cardExpiry">Expiry Date *</label>
+                      <input type="text" class="form-control" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="cardCVV">CVV *</label>
+                      <input type="text" class="form-control" id="cardCVV" name="cardCVV" placeholder="123">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terms & Conditions -->
+              <div class="form-check" style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+                <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                <label class="form-check-label" for="terms">
+                  I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-place-order">Place Order</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="order-summary">
+            <div class="order-title">Order Summary</div>
+            
+            <div id="orderItems"></div>
+
+            <div class="order-item">
+              <span>Subtotal:</span>
+              <span id="subtotal">💲0.00</span>
+            </div>
+
+            <div class="order-item">
+              <span>Shipping:</span>
+              <span>💲2.00</span>
+            </div>
+
+            <div class="order-item">
+              <span>Tax (6%):</span>
+              <span id="tax">💲0.00</span>
+            </div>
+
+            <div class="order-item total">
+              <span>Total:</span>
+              <span id="totalAmount">💲0.00</span>
+            </div>
+
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
+              <h5 style="font-weight: 700; margin-bottom: 10px;">Shipping Options:</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="shipping" id="standard" value="standard" checked>
+                <label class="form-check-label" for="standard">
+                  Standard Shipping - 5-7 business days 
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="shipping" id="express" value="express">
+                <label class="form-check-label" for="express">
+                  Express Shipping - 2-3 business days 
+                </label>
+              </div>
+            </div>
+
+            <div style="background-color: #e8f5e9; padding: 15px; border-radius: 5px; margin-top: 15px; border-left: 4px solid #4caf50;">
+              <p style="margin: 0; color: #2e7d32; font-size: 14px;">
+                <i class="fas fa-check-circle"></i> You have a secure connection. Your information is encrypted.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <p>© 2026 Walmart. The trademarks Walmart and the Walmart Spark design are registered with the US Patent and Trademark Office. All Rights Reserved.</p>
+        </div>
+        <div class="footer-col">
+          <p>Give Feedback</p>
+          <p>Terms of Use</p>
+          <p>Privacy Notice</p>
+          <p>California Supply Chain Act </p>
+          <p>Your Privacy Choices</p>
+          <p>Notice at Collection</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/java_script.js"></script>
+
+  <script>
+    // Display order summary
+    function displayOrderSummary() {
+      let itemsHtml = '';
+      cart.forEach(item => {
+        itemsHtml += `
+          <div class="order-item">
+            <span>${item.name} (x${item.quantity})</span>
+            <span>💲${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `;
+      });
+      
+      const subtotal = getCartTotal();
+      const tax = subtotal * 0.1;
+      const total = subtotal + 50 + tax;
+
+      document.getElementById('orderItems').innerHTML = itemsHtml;
+      document.getElementById('subtotal').textContent = '💲' + subtotal.toFixed(2);
+      document.getElementById('tax').textContent = '💲' + tax.toFixed(2);
+      document.getElementById('totalAmount').textContent = '💲' + total.toFixed(2);
+    }
+
+    // Handle shipping address checkbox
+    document.getElementById('sameAddress').addEventListener('change', function() {
+      document.getElementById('shippingAddress').style.display = this.checked ? 'none' : 'block';
+    });
+
+    // Handle payment method change
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        document.getElementById('cardDetails').style.display = this.value === 'creditcard' ? 'block' : 'none';
+      });
+    });
+
+    // Initialize
+    displayOrderSummary();
+  </script>
+</body>
+</html>

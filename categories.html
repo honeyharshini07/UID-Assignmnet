@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop by Category</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo" style="height:40px;margin-right:8px;border-radius:4px;">WalMart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link active" href="categories.html">Categories</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center ml-3">
+          <a href="cart.html" class="cart-icon ml-2"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cart-count">0</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <div class="page-header-bg">
+      <div id="pageCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="assets/img/background1.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background2.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background3.png" alt="Background"></div>
+          <div class="carousel-item"><img src="assets/img/background4.png" alt="Background"></div>
+        </div>
+        <a class="carousel-control-prev" href="#pageCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#pageCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Product Categories</h1>
+      <!--<p>Welcome to Ganesh Glass & Plywoods - Browse our diverse product range</p>-->
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="category-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=grocery'">
+            <div><i class="fas fa-layer-group"></i></div>
+            <h3 class="category-name">Grocery</h3>
+            <a href="product.html?category=grocery" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=fashion'">
+            <div><i class="fas fa-cogs"></i></div>
+            <h3 class="category-name">Clothing ,Shoes and Accessories</h3>
+            <a href="product.html?category=fashion" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=baby'">
+            <div><i class="fas fa-couch"></i></div>
+            <h3 class="category-name">Baby and Kids</h3>
+            <a href="product.html?category=baby" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=home'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Home</h3>
+            <a href="product.html?category=home" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=electronics'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Electronics</h3>
+            <a href="product.html?category=electronics" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=personal care'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Personal Care</h3>
+            <a href="product.html?category=personal care" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=beauty'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Beauty</h3>
+            <a href="product.html?category=beauty" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=game and movie'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Gaming and Movies</h3>
+            <a href="product.html?category=game and movie" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=pets'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Pets</h3>
+            <a href="product.html?category=pets" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=books'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Books</h3>
+            <a href="product.html?category=books" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=work'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">School and Office Essentials</h3>
+            <a href="product.html?category=work" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="category-card" onclick="window.location.href='product.html?category=party'">
+            <div><i class="fas fa-paint-roller"></i></div>
+            <h3 class="category-name">Party Supplies</h3>
+            <a href="product.html?category=party" style="color:var(--primary-color);font-weight:600;text-decoration:none;">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <a>All Departments</a>
+        </div>
+        <div class="footer-col">
+          <a>Store Directory</a>
+        </div>
+        <div class="footer-col">
+          <a>Our Company</a>
+        </div>
+        <div class="footer-col">
+          <a>Careers</a>
+        </div>
+        <div class="footer-col">
+          <a>Sell on WalMart.com</a>
+        </div>
+        <div class="footer-col">
+          <a>Help</a>
+        </div>
+        <div class="footer-col">
+          <a>Product Recalls</a>
+        </div>
+        <div class="footer-col">
+          <a>Accessebility</a>
+        </div>
+        <div class="footer-col">
+          <a>Tax Exempt Program</a>
+        </div>
+        <div class="footer-col">
+          <a>Get the WalMart App</a>
+        </div>
+        <div class="footer-col">
+          <a>Saftey DataSheet</a>
+        </div>
+        <div class="footer-col">
+          <a>Terms of Use</a>
+        </div>
+        <div class="footer-col">
+          <a>Privacy Notice</a>
+        </div>
+        <div class="footer-col">
+          <a>California Supply Chain Act </a>
+        </div>
+        <div class="footer-col">
+          <a>Your Privacy Choices</a>
+        </div>
+        <div class="footer-col">
+          <a>Notice at Collection</a>
+        </div>
+        <div class="footer-col">
+          <a>AdChoices</a>
+        </div>
+        <div class="footer-col">
+          <a>Learn About Spark Driver</a>
+        </div>
+        <div class="footer-col">
+          <a>Brand Shop Directory</a>
+        </div>
+        <div class="footer-col">
+          <a>WalMart Business</a>
+        </div>
+        <div class="footer-col">
+          <a>#IYWYK</a>
+        </div>
+        <div class="footer-col">
+          <a>Delete Account</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Walmart. The trademarks Walmart and the Walmart Spark design are registered with the US Patent and Trademark Office. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="assets/js/java_script.js"></script>
+</body>
+</html>
